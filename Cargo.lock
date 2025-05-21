@@ -117,6 +117,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "axalloc"
+version = "0.1.0"
+source = "git+https://github.com/oscomp/arceos.git#f29b2482962f77e62d1c4f497cb7367ebc0e6da4"
+dependencies = [
+ "allocator",
+ "axerrno",
+ "cfg-if",
+ "kspin",
+ "log",
+ "memory_addr",
+]
+
+[[package]]
 name = "axconfig"
 version = "0.1.0"
 dependencies = [
@@ -149,7 +162,7 @@ dependencies = [
 name = "axdriver"
 version = "0.1.0"
 dependencies = [
- "axalloc",
+ "axalloc 0.1.0",
  "axconfig",
  "axdriver_base",
  "axdriver_block",
@@ -218,7 +231,7 @@ dependencies = [
 name = "axfeat"
 version = "0.1.0"
 dependencies = [
- "axalloc",
+ "axalloc 0.1.0",
  "axdriver",
  "axfs",
  "axhal",
@@ -292,7 +305,7 @@ dependencies = [
  "aarch64-cpu",
  "arm_gicv2",
  "arm_pl011",
- "axalloc",
+ "axalloc 0.1.0",
  "axconfig",
  "axlog",
  "bitflags 2.9.0",
@@ -344,7 +357,7 @@ dependencies = [
 name = "axmm"
 version = "0.1.0"
 dependencies = [
- "axalloc",
+ "axalloc 0.1.0",
  "axconfig",
  "axerrno",
  "axhal",
@@ -396,7 +409,7 @@ dependencies = [
 name = "axruntime"
 version = "0.1.0"
 dependencies = [
- "axalloc",
+ "axalloc 0.1.0",
  "axconfig",
  "axdriver",
  "axfs",
@@ -1221,6 +1234,7 @@ checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
 name = "starry"
 version = "0.1.0"
 dependencies = [
+ "axalloc 0.1.0 (git+https://github.com/oscomp/arceos.git)",
  "axerrno",
  "axfeat",
  "axfs",

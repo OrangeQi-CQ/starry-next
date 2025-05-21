@@ -7,6 +7,8 @@ extern crate axlog;
 extern crate alloc;
 extern crate axruntime;
 
+use axalloc::GlobalPage;
+
 mod entry;
 mod mm;
 mod syscall;
