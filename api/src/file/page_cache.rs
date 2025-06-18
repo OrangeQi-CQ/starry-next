@@ -458,6 +458,7 @@ pub struct PageCache {
 impl PageCache {
     pub fn new(path: String) -> Self {
         warn!("Create Pagecache {}", path);
+        // 这里 set_create 是为了方便 shm_get
         let opts = OpenOptions::new().set_read(true).set_write(true);
         let file = axfs::fops::File::open(path.as_str(), &opts).unwrap();
         let file = Arc::new(Mutex::new(file));

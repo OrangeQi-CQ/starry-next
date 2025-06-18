@@ -69,7 +69,10 @@ pub fn sys_openat(
     let path = path.get_as_str()?;
     let opts: OpenOptions = flags_to_options(flags, mode);
     debug!("sys_openat <= {} {} {:?}", dirfd, path, opts);
+    do_openat(dirfd, path, opts)
+}
 
+pub fn do_openat(dirfd: c_int, path: &str, opts: OpenOptions) -> LinuxResult<isize> {
     let dir = if path.starts_with('/') || dirfd == AT_FDCWD {
         None
     } else {
